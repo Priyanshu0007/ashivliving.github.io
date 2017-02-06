@@ -47,3 +47,16 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, 
         }
     });
 }
+
+
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+}
+
+function loadMap(){
+        var a = getURLParameter('a');
+        var b = getURLParameter('b');
+        var c = getURLParameter('c');
+        var d = getURLParameter('d');
+        initMap(a,b,c,d);
+}
