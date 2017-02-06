@@ -6,7 +6,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCEGgrOXzPmiVaczcM11Udv9ZSWpQFeAQ" type="text/javascript"></script>
     <script type="text/javascript" src="script.js"></script>
 </head>
-<body>
-	<div id="map-canvas">Hey</div>
+<body onload="initMap(30.749539,76.759254,30.757250,76.765439);">
+	<div id="map-canvas"></div>
 </body>
 </html>
