@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script type="text/javascript" src="assets/js/script.js"></script>
 </head>
 <body>
 <img class="background" src="assets/images/goonj_bck.jpeg">
@@ -67,24 +68,28 @@
                         <div class="panel-body">
                             <table class="table">
                                 <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-pencil text-primary"></span><a href="http://www.jquery2dotnet.com">Articles</a>
+                                    <td onclick="loaddoc(0);">
+                                        <span class="glyphicon glyphicon-user">&nbsp;</span>Star Night
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-flash text-success"></span><a href="http://www.jquery2dotnet.com">News</a>
+                                    <td onclick="loaddoc(1);">
+                                        <span class="glyphicon glyphicon-volume-up">&nbsp;</span>Electronic-Dance-Music
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-file text-info"></span><a href="http://www.jquery2dotnet.com">Newsletters</a>
+                                    <td onclick="loaddoc(2);">
+                                        <span class="glyphicon glyphicon-sunglasses">&nbsp;</span>Fashion Show
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-comment text-success"></span><a href="http://www.jquery2dotnet.com">Comments</a>
-                                        <span class="badge">42</span>
+                                    <td >
+                                        <span class="glyphicon glyphicon-road">&nbsp;</span>Road show
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td >
+                                        <span class="glyphicon glyphicon-flag">&nbsp;</span>Goonj Rally
                                     </td>
                                 </tr>
                             </table>
@@ -231,10 +236,10 @@
             </div>
         </div>
         <div class="col-sm-9 col-md-9">
-            <div class="well">
-                <h1>
-                    Accordion Menu With Icon</h1>
-                Admin Dashboard Accordion Menu
+            <div class="well" id="display-event">
+                <h1 id="event-heading">
+                    Welcome to Goonj 2017</h1>
+                <p id="event-detail">17 - 19 March 2017</p>
             </div>
         </div>
     </div>
@@ -245,7 +250,15 @@
     <!-- ================= -->
  	<script type="text/javascript" src="assets/js/jquery.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript">
+        function loaddoc(id) {
+          $.getJSON("event.json", function(json) {
+            console.log(json.event[id].event);
+            document.getElementById("event-heading").innerHTML = json.event[id].name;
+            document.getElementById("event-detail").innerHTML = json.event[id].detail;
+            });
+        }
+    </script>
 
 </body>
 </html>

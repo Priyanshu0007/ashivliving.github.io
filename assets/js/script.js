@@ -1,3 +1,5 @@
+
+
 function movescreen(a,b,c) {
     
    up(a,b,c);
@@ -18,4 +20,6 @@ function up(a,b,c) {
   }
   document.getElementById("nav").classList.remove("hidden");
 }
+
+
 
