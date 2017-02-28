@@ -1,1 +1,0 @@
-# ashivliving.github.io
